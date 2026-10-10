@@ -1,3 +1,7 @@
+--!jinja
+CALL SYSTEM$CREATE_SEMANTIC_VIEW_FROM_YAML(
+  '{{db}}.SEMANTIC',
+  $$
 name: ACCOUNTS_SV
 description: Salesforce accounts (customer companies)
 tables:
@@ -21,3 +25,5 @@ tables:
       - name: ACCOUNT_COUNT
         description: Number of accounts
         expr: COUNT(ID)
+  $$
+);
